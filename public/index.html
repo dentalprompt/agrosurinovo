@@ -106,7 +106,7 @@
         <div class="container">
           <div class="section-head">
             <div>
-              <h2>Oportunidades em <span>destaque</span></h2>
+              <h2>Carros, motos e <span>maquinários em destaque</span></h2>
               <p>
                 Conheça os destaques do nosso catálogo e encontre a oportunidade
                 que combina com o que você procura.
@@ -233,6 +233,33 @@
         return galleryImages[0] || item.image_url || "";
       };
 
+      const mixFeaturedItems = (items, limit = 12) => {
+        const machineryCategories = new Set([
+          "Tratores",
+          "Colheitadeiras",
+          "Implementos",
+          "Retroescavadeiras",
+          "Pás Carregadeiras"
+        ]);
+        const prioritized = [...items].sort((first, second) =>
+          Number(second.sections?.includes("destaques")) - Number(first.sections?.includes("destaques"))
+        );
+        const groups = [
+          prioritized.filter((item) => item.category !== "Motos" && !machineryCategories.has(item.category)),
+          prioritized.filter((item) => item.category === "Motos"),
+          prioritized.filter((item) => machineryCategories.has(item.category))
+        ];
+        const selected = [];
+
+        while (selected.length < limit && groups.some((group) => group.length)) {
+          groups.forEach((group) => {
+            if (selected.length < limit && group.length) selected.push(group.shift());
+          });
+        }
+
+        return selected;
+      };
+
       const createProductCard = (item) => {
         const image = getItemImage(item);
         const photoCount = Array.isArray(item.gallery_images) && item.gallery_images.length
@@ -282,11 +309,11 @@
         });
       };
 
-      fetch("/api/catalog/items?section=destaques&limit=12")
+      fetch("/api/catalog/items")
         .then((response) => response.json())
         .then((data) => {
           if (Array.isArray(data.items) && data.items.length) {
-            homeFeaturedGrid.innerHTML = data.items.map(createProductCard).join("");
+            homeFeaturedGrid.innerHTML = mixFeaturedItems(data.items).map(createProductCard).join("");
           }
         })
         .catch(() => null)
