@@ -2,7 +2,7 @@
 
 Site institucional com catálogo, página de detalhe, cadastro e login com autenticação JWT própria usando Supabase apenas como banco Postgres.
 
-Esta cópia está sendo preparada como projeto independente. A identidade, os contatos, o domínio e as integrações de pagamento dependem dos dados confirmados pelo proprietário.
+Projeto independente da AGRO SURI, publicado em [www.agrosuriveiculosemaquinas.com.br](https://www.agrosuriveiculosemaquinas.com.br/).
 
 ## Stack
 
@@ -76,7 +76,7 @@ Variáveis usadas:
 
 ## Publicação
 
-Deploy no Vercel pendente. Configure domínio, contatos e variáveis de produção antes de publicar. O arquivo `.env`, os backups e os documentos privados não são versionados.
+O ambiente de produção está publicado no Vercel com domínio próprio e HTTPS. Integrações de pagamento e webhooks permanecem sem credenciais até que sejam fornecidas configurações próprias da AGRO SURI. O arquivo `.env`, os backups e os documentos privados não são versionados.
 
 Defina `ADMIN_EMAIL` e `ADMIN_PASSWORD` no ambiente. Não existe senha administrativa padrão no código.
 
