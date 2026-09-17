@@ -465,7 +465,7 @@ app.post("/api/admin/invoices", adminRequired, async (req, res) => {
       },
       dueDate: dueDate || undefined,
       metadata: {
-        provider: "PRIME LEILÕES",
+        provider: "AGRO SURI",
         invoiceTitle: String(title).trim(),
         invoiceToken: publicToken
       },

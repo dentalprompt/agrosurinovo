@@ -41,7 +41,7 @@ const getTodayInSaoPaulo = () =>
     day: "2-digit"
   }).format(new Date());
 
-const contractSellerName = "PRIME LEILÕES";
+const contractSellerName = "SURI NEGOCIACOES E INTERMEDIACOES LTDA – ME";
 
 const normalizeInvoicePayload = (invoice) => {
   if (!invoice) {
@@ -615,7 +615,7 @@ export default async function handler(req, res) {
           },
           dueDate: dueDate || undefined,
           metadata: {
-            provider: "PRIME LEILÕES",
+            provider: "AGRO SURI",
             invoiceTitle: String(title).trim(),
             invoiceToken: publicToken
           },

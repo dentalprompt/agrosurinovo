@@ -4,7 +4,7 @@ import { createUser, findUserByEmailOrCpf, updateUserPasswordAndRole } from "../
 import { DEFAULT_CATALOG_ITEMS } from "./default-catalog.js";
 import { countContracts, ensureContractSchema, listContracts } from "../contracts/repository.js";
 
-const DEFAULT_ADMIN_EMAIL = (process.env.ADMIN_EMAIL || "admin@prime-leiloes.local").trim().toLowerCase();
+const DEFAULT_ADMIN_EMAIL = (process.env.ADMIN_EMAIL || "admin@agrosuri.local").trim().toLowerCase();
 const DEFAULT_ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
 let adminSchemaPromise;
@@ -162,17 +162,17 @@ export const ensureDefaultAdminUser = async () => {
     }
 
     return createUser({
-      fullName: "Administrador PRIME LEILÕES",
+      fullName: "Administrador AGRO SURI",
       email: DEFAULT_ADMIN_EMAIL,
-      whatsapp: "+55 11 95734-2158",
+      whatsapp: "+55 11 94879-0154",
       cpf: "000.000.000-00",
-      cep: "00000-000",
-      address: "Painel Administrativo",
-      number: "S/N",
-      district: "Centro",
+      cep: "04530-000",
+      address: "R. Dr. Renato Paes de Barros",
+      number: "618",
+      district: "Itaim Bibi",
       complement: null,
-      city: "Ipiranga",
-      state: "PR",
+      city: "São Paulo",
+      state: "SP",
       photoUrl: null,
       passwordHash,
       role: "admin"
@@ -212,7 +212,7 @@ export const ensureDefaultCatalogItems = async () => {
             item.yearLabel,
             item.imageUrl,
             JSON.stringify(Array.isArray(item.galleryImages) && item.galleryImages.length ? item.galleryImages : [item.imageUrl]),
-            item.whatsapp || "5511957342158",
+            item.whatsapp || "5511948790154",
             item.badge || item.category,
             item.galleryCount || (Array.isArray(item.galleryImages) && item.galleryImages.length ? item.galleryImages.length : 1),
             item.description
@@ -237,7 +237,7 @@ export const getAdminDashboardData = async () => {
       order by created_at desc
     `),
     pool.query(`
-      select id, title, slug, category, sections, price, location, year_label, image_url, gallery_images, badge, gallery_count, description, is_published, created_at
+      select id, title, slug, category, sections, price, location, year_label, image_url, gallery_images, whatsapp, badge, gallery_count, description, is_published, created_at
       from public.app_catalog_items
       order by created_at desc
     `),

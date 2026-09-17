@@ -97,9 +97,9 @@ export const renderAcquisitionContractHtml = (contract) => {
     <article class="contract-document">
       <header class="contract-document__header">
         <div class="contract-document__brand">
-          <img src="/prime-leiloes.png" alt="PRIME LEILÕES" />
+          <img src="/agrosuri.png" alt="AGRO SURI" />
           <div>
-            <strong>PRIME LEILÕES</strong>
+            <strong>AGRO SURI</strong>
             <span>LEILÕES E INTERMEDIAÇÕES</span>
           </div>
         </div>
@@ -111,8 +111,8 @@ export const renderAcquisitionContractHtml = (contract) => {
 
         <p class="contract-lead">
           Pelo presente instrumento particular, de um lado <strong>${escapeHtml(contract.sellerName)}</strong>,
-          inscrita no CNPJ sob o nº <strong>32.081.982/0001-80</strong>, com endereço comercial em
-          <strong>RUA PROFESSOR ZEFERINO VAZ, 107, VILA ARAPUÁ, SÃO PAULO - SP, CEP 04258-000</strong>,
+          inscrita no CNPJ sob o nº <strong>01.934.111/0001-38</strong>, com endereço comercial em
+          <strong>R. DR. RENATO PAES DE BARROS, 618 - ITAIM BIBI, SÃO PAULO - SP, 04530-000</strong>,
           doravante denominada VENDEDORA, e de outro lado <strong>${escapeHtml(contract.clientName || "CLIENTE")}</strong>,
           inscrito no CPF sob o nº <strong>${escapeHtml(contract.clientCpf || "-")}</strong>,
           residente e domiciliado em <strong>${escapeHtml(contract.clientAddress || "-")}</strong>,

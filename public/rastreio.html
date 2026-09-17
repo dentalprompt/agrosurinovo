@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>PRIME LEILÕES | Rastreio</title>
+    <title>AGRO SURI | Rastreio</title>
     <meta
       name="description"
-      content="Consulte o rastreio do seu veículo ou máquina na PRIME LEILÕES."
+      content="Consulte o rastreio do seu veículo ou máquina na AGRO SURI."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,7 +20,7 @@
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
       crossorigin=""
     />
-    <link rel="icon" type="image/png" href="./prime-leiloes.png" />
+    <link rel="icon" type="image/png" href="./agrosuri.png" />
     <link rel="stylesheet" href="./styles.css" />
     <meta name="theme-color" content="#041e42" />
     <link rel="stylesheet" href="./responsive.css" />
@@ -28,8 +28,8 @@
   <body class="tracking-page">
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="./index.html" aria-label="PRIME LEILÕES">
-          <img class="brand-logo" src="./prime-leiloes.png" alt="PRIME LEILÕES" />
+        <a class="brand" href="./index.html" aria-label="AGRO SURI">
+          <img class="brand-logo" src="./agrosuri.png" alt="AGRO SURI" />
         </a>
 
         <nav class="desktop-nav" aria-label="Navegação principal">
@@ -263,13 +263,13 @@
       <div class="container footer-grid">
         <div>
           <div class="footer-brand">
-            <img class="footer-logo" src="./prime-leiloes.png" alt="PRIME LEILÕES" />
+            <img class="footer-logo" src="./agrosuri.png" alt="AGRO SURI" />
           </div>
-          <p>PRIME LEILÕES. Oportunidades em veículos e máquinas para o seu próximo passo.</p>
+          <p>AGRO SURI. Oportunidades em veículos e máquinas para o seu próximo passo.</p>
           <div class="social-row">
-            <a href="https://www.facebook.com/" aria-label="Facebook">FB</a>
-            <a href="https://www.instagram.com/" aria-label="Instagram">IG</a>
-            <a href="https://wa.me/5511957342158" aria-label="WhatsApp">WA</a>
+
+
+            <a href="https://wa.me/5511948790154" aria-label="WhatsApp">WA</a>
           </div>
         </div>
 
@@ -296,21 +296,24 @@
         <div>
           <h3>Contato</h3>
           <ul class="contact-list">
-            <li><a href="https://wa.me/5511957342158">Atendimento PRIME LEILÕES</a></li>
+            <li><a href="https://wa.me/5511948790154">Atendimento AGRO SURI</a></li>
+            <li><a href="mailto:contato@agrosuri.com.br">contato@agrosuri.com.br</a></li>
             <li>ENDEREÇO COMERCIAL E FISCAL</li>
-            <li>Rua Professor Zeferino Vaz, 107 - Vila Arapuá, São Paulo - SP, CEP 04258-000</li>
-            <li>CNPJ: 32.081.982/0001-80</li>
+            <li>R. Dr. Renato Paes de Barros, 618 - Itaim Bibi, São Paulo - SP, 04530-000</li>
+            <li>RECEBIMENTOS E RETIRADAS DE VEÍCULOS (PÁTIO)</li>
+            <li>Av. José de Souza Branco, 964 - Jundiapeba, Mogi das Cruzes - SP, 08750-610</li>
+            <li>CNPJ: 01.934.111/0001-38</li>
           </ul>
         </div>
       </div>
 
       <div class="container footer-bottom">
-        <p>2026 PRIME LEILÕES. Todos os direitos reservados.</p>
-        <p>CNPJ: 32.081.982/0001-80 | Rua Professor Zeferino Vaz, 107 - Vila Arapuá, São Paulo - SP, CEP 04258-000</p>
+        <p>2026 AGRO SURI. Todos os direitos reservados.</p>
+        <p>CNPJ: 01.934.111/0001-38 | R. Dr. Renato Paes de Barros, 618 - Itaim Bibi, São Paulo - SP, 04530-000</p>
       </div>
     </footer>
 
-    <a class="floating-whatsapp" href="https://wa.me/5511957342158" aria-label="Falar no WhatsApp"><img src="./whatsapp1.png" alt="" width="58" height="58" /></a>
+    <a class="floating-whatsapp" href="https://wa.me/5511948790154" aria-label="Falar no WhatsApp"><img src="./whatsapp1.png" alt="" width="58" height="58" /></a>
 
     <nav class="mobile-nav" aria-label="Navegação mobile">
       <a class="mobile-nav-item" href="./index.html">Início</a>
@@ -676,7 +679,7 @@
             "Endereço comercial",
             tracking.driver_commercial_address ||
               tracking.yard_address ||
-              "Rua Professor Zeferino Vaz, 107 - Vila Arapuá, São Paulo - SP, CEP 04258-000"
+              "Av. José de Souza Branco, 964 - Jundiapeba, Mogi das Cruzes - SP, 08750-610"
           ],
           ["Observações", tracking.driver_notes || "Entregador vinculado ao seu rastreio com situação regular."]
         ]
@@ -723,8 +726,8 @@
       };
 
       const waitingAtYard = tracking => String(tracking.status || "").toLowerCase().includes("aguardando nota fiscal");
-      const yardAddress = tracking => tracking.yard_address || "Rua Professor Zeferino Vaz, 107 - Vila Arapuá, São Paulo - SP, CEP 04258-000";
-      const reportedLocation = tracking => waitingAtYard(tracking) ? `No pátio — ${tracking.yard_name || "PRIME LEILÕES"}: ${yardAddress(tracking)}` : tracking.current_location;
+      const yardAddress = tracking => tracking.yard_address || "Av. José de Souza Branco, 964 - Jundiapeba, Mogi das Cruzes - SP, 08750-610";
+      const reportedLocation = tracking => waitingAtYard(tracking) ? `No pátio — ${tracking.yard_name || "AGRO SURI"}: ${yardAddress(tracking)}` : tracking.current_location;
       const renderMap = async (tracking, user) => {
         ensureMap();
         clearMapLayers();
@@ -736,7 +739,7 @@
         const destinationAddress = tracking.destination_address || profileAddress || "Destino final não informado";
 
         const [startCoords, currentCoords, destinationCoords] = await Promise.all([
-          geocodeAddress(startAddress || "Rua Professor Zeferino Vaz, 107 - Vila Arapuá, São Paulo - SP, CEP 04258-000"),
+          geocodeAddress(startAddress || "Av. José de Souza Branco, 964 - Jundiapeba, Mogi das Cruzes - SP, 08750-610"),
           currentAddress ? geocodeAddress(currentAddress) : Promise.resolve(null),
           geocodeAddress(destinationAddress)
         ]);
