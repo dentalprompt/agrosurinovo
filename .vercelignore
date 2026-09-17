@@ -1,11 +1,23 @@
-/*
-!/api/
-!/api/**
-!/public/
-!/public/**
-!/src/
-!/src/**
-!/package.json
-!/package-lock.json
-!/server.js
-!/vercel.json
+.git/
+.vercel/
+node_modules/
+.env
+.env.*
+!.env.example
+backups/
+COMO-RESTAURAR-SUPABASE.md
+docsigilo.txt
+veiculos/
+OUTROS VEICULOS/
+scripts/restaurar-novo-supabase.mjs
+scripts/setup-prime-db.js
+/*.exe
+/*.deb
+/*.pdf
+/*.mp4
+/*.mov
+/*.jpeg
+/*.jpg
+/*.png
+/fullpage_snapshot_*.png
+/Captura de tela de *.png
