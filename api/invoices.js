@@ -35,7 +35,6 @@ const normalizeInvoicePayload = (invoice) => {
     pixCode: invoice.pixCode,
     pixImage: invoice.pixImage,
     paymentUrl: invoice.paymentUrl,
-    callbackUrl: invoice.callbackUrl,
     sigiloDetails: invoice.sigiloDetails,
     sigiloPayload: invoice.sigiloPayload,
     paidAt: invoice.paidAt,
