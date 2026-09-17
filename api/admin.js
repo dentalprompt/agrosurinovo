@@ -18,7 +18,7 @@ import {
 } from "../src/admin/repository.js";
 import { createContract, createContractToken, listContracts } from "../src/contracts/repository.js";
 import { renderAcquisitionContractHtml } from "../src/contracts/template.js";
-import { createInvoice, createInvoiceToken, findInvoiceById, listInvoices, syncInvoiceWithIron } from "../src/invoices/repository.js";
+import { countInvoices, createInvoice, createInvoiceToken, findInvoiceById, listInvoices, syncInvoiceWithIron } from "../src/invoices/repository.js";
 import { createIronPixPayment, fetchIronTransaction } from "../src/payments/ironpay.js";
 import { requireAdmin } from "./_lib/admin.js";
 import { handleOptions, readJsonBody, sendJson, getQueryParam } from "./_lib/http.js";
@@ -192,8 +192,8 @@ export default async function handler(req, res) {
         return sendJson(req, res, 405, { message: "Método não permitido." });
       }
 
-      const data = await getAdminDashboardData();
-      return sendJson(req, res, 200, data);
+      const [data, invoicesTotal] = await Promise.all([getAdminDashboardData(), countInvoices()]);
+      return sendJson(req, res, 200, { ...data, invoicesTotal });
     }
 
     if (action === "customers") {
