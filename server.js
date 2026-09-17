@@ -1107,6 +1107,7 @@ app.get("/catalog-api-detail", handleCatalogDetail);
   ["/cadastro", "cadastro.html"],
   ["/rastreio", "rastreio.html"],
   ["/fatura", "fatura.html"],
+  ["/contrato", "contrato.html"],
   ["/detalhe", "detalhe.html"],
   ["/", "index.html"]
 ].forEach(([routePath, fileName]) => {
