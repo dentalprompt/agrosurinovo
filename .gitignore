@@ -1,0 +1,42 @@
+node_modules
+.env
+.env.*
+!.env.example
+npm-debug.log*
+fullpage_snapshot_*.png
+.vercel
+Captura de tela de *.png
+whatsapp1.png
+!public/whatsapp1.png
+
+# Arquivos privados e cópias locais
+backups/
+docsigilo.txt
+*.pem
+*.key
+*.p12
+*.pfx
+*.dump
+*.bak
+*.sqlite
+*.db
+*.pdf
+*.exe
+*.deb
+*.zip
+*.tar
+*.gz
+*.mp4
+*.mov
+*.jpeg
+*.jpg
+*.png
+!public/**
+!public/**/*.jpeg
+!public/**/*.jpg
+!public/**/*.png
+veiculos/
+OUTROS VEICULOS/
+scripts/setup-prime-db.js
+.env.local
+.env.*.local
