@@ -1,0 +1,11 @@
+/*
+!/api/
+!/api/**
+!/public/
+!/public/**
+!/src/
+!/src/**
+!/package.json
+!/package-lock.json
+!/server.js
+!/vercel.json
