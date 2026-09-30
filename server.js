@@ -1016,6 +1016,23 @@ app.post("/api/admin/trackings", adminRequired, async (req, res) => {
     return res.status(201).json({ tracking });
   } catch (error) {
     console.error(error);
+
+    if (error?.code === "23505") {
+      return res.status(409).json({
+        message: "Este código de rastreio já está cadastrado. Informe um código diferente."
+      });
+    }
+
+    if (error?.code === "23503") {
+      return res.status(400).json({
+        message: "Cliente, veículo, motorista ou pátio selecionado não existe mais. Atualize o painel e tente novamente."
+      });
+    }
+
+    if (error?.code === "22007") {
+      return res.status(400).json({ message: "Informe uma data de entrega válida." });
+    }
+
     return res.status(500).json({ message: "Erro ao cadastrar rastreio." });
   }
 });

@@ -720,6 +720,26 @@ export default async function handler(req, res) {
       return sendJson(req, res, 500, { message: "Erro ao cadastrar pátio." });
     }
 
+    if (action === "trackings") {
+      if (error?.code === "23505") {
+        return sendJson(req, res, 409, {
+          message: "Este código de rastreio já está cadastrado. Informe um código diferente."
+        });
+      }
+
+      if (error?.code === "23503") {
+        return sendJson(req, res, 400, {
+          message: "Cliente, veículo, motorista ou pátio selecionado não existe mais. Atualize o painel e tente novamente."
+        });
+      }
+
+      if (error?.code === "22007") {
+        return sendJson(req, res, 400, { message: "Informe uma data de entrega válida." });
+      }
+
+      return sendJson(req, res, 500, { message: "Erro ao cadastrar rastreio." });
+    }
+
     if (action === "invoices") {
       return sendJson(
         req,
@@ -733,6 +753,6 @@ export default async function handler(req, res) {
       return sendJson(req, res, 502, { message: "Erro ao sincronizar fatura." });
     }
 
-    return sendJson(req, res, 500, { message: "Erro ao cadastrar rastreio." });
+    return sendJson(req, res, 500, { message: "Erro interno no painel administrativo." });
   }
 }
