@@ -40,3 +40,9 @@ OUTROS VEICULOS/
 scripts/setup-prime-db.js
 .env.local
 .env.*.local
+
+# Documentos privados e arquivos locais fora da aplicação
+/ACESSOS CONNECTACORP.txt
+/COMO-RESTAURAR-SUPABASE.md
+/*.webm
+/tela_pesquisa_monitoramento_com_link.html
